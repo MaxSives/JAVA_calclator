@@ -9,6 +9,8 @@ public class Calculator {
         System.out.println(Operation.remainderOfTheDivision(11, 5));
         System.out.println(Operation.exponentiation(2, 3));
         System.out.println(Operation.addition(100, 100));
+        System.out.println(Operation.subtraction(-10, 5));
+        System.out.println(Operation.addition(2.34, 2.01));
 
     }
 
