@@ -1,12 +1,17 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
 class CalculatorTest {
     @Test
     public void additionTest() {
       double result = Calculator.addition(2,2);
       Assertions.assertEquals(4, result);
+    }
+
+    @Test
+    public void additionOfNegativeNumbers() {
+        double result = Calculator.addition(-2,-21);
+        Assertions.assertEquals(-23, result);
     }
 
     @Test
@@ -24,6 +29,12 @@ class CalculatorTest {
     @Test
     public void subtractionTest() {
         double result = Calculator.subtraction(8,6);
+        Assertions.assertEquals(2, result);
+    }
+
+    @Test
+    public void subtractionOfNegativeNumbers () {
+        double result = Calculator.subtraction(-2,-4);
         Assertions.assertEquals(2, result);
     }
 
