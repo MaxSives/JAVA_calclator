@@ -1,22 +1,17 @@
 public class Calculator {
 
-    public static double calculator(double a, char operation, double b) {
-        double result = 0;
-        switch (operation){
+    public static double calculate(double a, char operation, double b) {
+        switch (operation) {
             case '+':
-                result = a + b;
-                break;
+                return a + b;
             case '-':
-                result = a - b;
-                break;
+                return a - b;
             case '*':
-                result = a * b;
-                break;
+                return a * b;
             case '/':
                 if (b == 0) return 0;
-                else result = a / b;
-                break;
+                else return a / b;
         }
-        return result;
+        return 0;
     }
 }
