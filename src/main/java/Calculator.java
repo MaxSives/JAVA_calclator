@@ -1,34 +1,26 @@
 public class Calculator {
 
-    public static void main(String[] args) {}
-
-    public static double addition(double num1, double num2) {
-        return num1 + num2;
-    }
-
-    public static double subtraction(double num1, double num2) {
-        return num1 - num2;
-    }
-
-    public static double multiplication(double num1, double num2) {
-        return num1 * num2;
-    }
-
-    public static double division(double num1, double num2) {
-    try {
-        return num1 / num2;
-    } catch (ArithmeticException e) {
-       e.printStackTrace();
-    } return 0;
-    }
-
-    public static double remainderOfTheDivision(double num1, double num2) {
-        return num1 % num2;
-    }
-
-    public static double exponentiation(double num1, double num2) {
-        return Math.pow(num1, num2);
+    public static void main(String[] args) {
+        System.out.println(calculator(2, '+', 3));
     }
 
 
+    public static double calculator(double a, char operation, double b) {
+        double result = 0;
+        switch (operation){
+            case '+':
+                result = a + b;
+                break;
+            case '-':
+                result = a - b;
+                break;
+            case '*':
+                result = a * b;
+                break;
+            case '/':
+                result = a / b;
+                break;
+        }
+        return result;
+    }
 }
