@@ -18,7 +18,8 @@ public class Calculator {
                 result = a * b;
                 break;
             case '/':
-                result = a / b;
+                if (b == 0) return 0;
+                else result = a / b;
                 break;
         }
         return result;
