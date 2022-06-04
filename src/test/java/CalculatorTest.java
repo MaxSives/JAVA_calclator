@@ -84,4 +84,96 @@ class CalculatorTest {
         double result = Calculator.calculate(6.359, '*', 0);
         Assertions.assertEquals(0, result);
     }
+
+    @Test
+    public void addingBigNumbers() {
+        double result = Calculator.calculate(2478632, '+', 3968741);
+        Assertions.assertEquals(6447373, result);
+    }
+
+    @Test
+    public void subtractingBigNumbers() {
+        double result = Calculator.calculate(2478632, '-', 3968741);
+        Assertions.assertEquals(-1490109, result);
+    }
+
+    @Test
+    public void multiplicationBigNumbers() {
+        double result = Calculator.calculate(2478632, '*', 3968741);
+        Assertions.assertEquals(9.837048442312e12, result);
+    }
+
+    @Test
+    public void divisionBigNumbers() {
+        double result = Calculator.calculate(2478632, '/', 3968741);
+        double roundedResult = Precision.round(result, 3);
+        Assertions.assertEquals(0.625, roundedResult);
+    }
+
+    @Test
+    public void addingZeroToZero() {
+        double result = Calculator.calculate(0, '+', 0);
+        Assertions.assertEquals(0, result);
+    }
+
+    @Test
+    public void subtractingZeroToZero() {
+        double result = Calculator.calculate(0, '-', 0);
+        Assertions.assertEquals(0, result);
+    }
+
+    @Test
+    public void multiplicationZeroToZero() {
+        double result = Calculator.calculate(0, '*', 0);
+        Assertions.assertEquals(0, result);
+    }
+
+    @Test
+    public void multiplicationNumbersPerSymbol() {
+        double result = Calculator.calculate(2, '*', '2');
+        Assertions.assertEquals(100, result);
+    }
+
+    @Test
+    public void subtractingNumbersPerSymbol() {
+        double result = Calculator.calculate(10, '-', '2');
+        Assertions.assertEquals(-40, result);
+    }
+
+    @Test
+    public void addingNumbersPerSymbol() {
+        double result = Calculator.calculate(10, '+', '2');
+        Assertions.assertEquals(60, result);
+    }
+
+    @Test
+    public void divisionNumbersPerSymbol() {
+        double result = Calculator.calculate(100, '/', '2');
+        Assertions.assertEquals(2, result);
+    }
+
+    @Test
+    public void multiplicationSymbolPerSymbol() {
+        double result = Calculator.calculate('c', '*', 'a');
+        Assertions.assertEquals(9603, result);
+    }
+
+    @Test
+    public void subtractingSymbolPerSymbol() {
+        double result = Calculator.calculate('c', '-', '2');
+        Assertions.assertEquals(49, result);
+    }
+
+    @Test
+    public void addingSymbolPerSymbol() {
+        double result = Calculator.calculate('c', '+', 'a');
+        Assertions.assertEquals(196, result);
+    }
+
+    @Test
+    public void divisionSymbolPerSymbol() {
+        double result = Calculator.calculate('c', '/', 'a');
+        double roundedResult = Precision.round(result, 1);
+        Assertions.assertEquals(1, roundedResult);
+    }
 }
